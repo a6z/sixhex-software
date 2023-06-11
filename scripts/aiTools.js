@@ -15,6 +15,12 @@ $(document).ready(function () {
     e.stopPropagation();
   });
 
+  // 點擊 card list 外關閉
+  $(document).on("click", function () {
+    $(".filter-card").addClass("hidden");
+  });
+
+  // card list 單選
   $(".filter-filter__list .filter-list__option").on("click", function (e) {
     e.stopPropagation();
 
@@ -29,10 +35,5 @@ $(document).ready(function () {
     // 將點擊的選項設置為選中狀態
     $clickedOption.addClass("selected");
     $clickedOption.find("span.material-icons").text("check");
-
-    // 點擊 card list 外關閉
-    $(document).on("click", function () {
-      $(".filter-card").addClass("hidden");
-    });
   });
 });
