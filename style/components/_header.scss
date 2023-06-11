@@ -1,0 +1,90 @@
+/*--- header ---*/
+#header {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header {
+  height: 80px;
+  padding: 20px 0;
+  border-bottom: 1px solid $black0;
+  .logo {
+    width: 30%;
+  }
+}
+
+.navMenu-bar {
+  width: 70%;
+  justify-content: end;
+  gap: 20px;
+  a {
+    font-weight: 700;
+  }
+}
+
+.navMenu-btn {
+  display: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: $black0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.navMenu-collapse {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 80px);
+  left: 0px;
+  top: 80px;
+  z-index: 999;
+
+  background-color: $black100;
+  @include --fs-ds-03;
+  font-weight: 900;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.navMenu-collapse.open {
+  display: flex;
+  position: fixed;
+}
+
+.stopScrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+/* --- 768 以下 ----------------------------------------------------------------*/
+
+@include mobile {
+  nav {
+    .logo {
+      width: 50%;
+      img {
+        min-width: 147px;
+      }
+    }
+  }
+
+  .navMenu-bar {
+    display: none;
+  }
+
+  .navMenu-btn {
+    display: block;
+  }
+
+  .navMenu-collapse {
+    touch-action: none;
+  }
+}

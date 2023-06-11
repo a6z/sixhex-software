@@ -1,0 +1,87 @@
+/*--- footer ---*/
+#footer {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+.site-map {
+  border-top: 1px solid $black0;
+  padding: 80px 0;
+  align-items: start;
+  .menu {
+    width: 60%;
+    gap: 8px;
+    a {
+      @include --fs-ds-03;
+      font-weight: 900;
+    }
+  }
+  .logo {
+    text-align: right;
+    width: 40%;
+  }
+}
+.copyright {
+  border-top: 1px solid $black0;
+  padding: 20px 0 12px 0;
+  align-items: center;
+  gap: 20px;
+  @include --fs-body;
+  font-weight: 700;
+  .site-name {
+    width: 20%;
+    min-width: 124px;
+  }
+  .socialLinks {
+    width: 100%;
+    gap: 20px;
+    a {
+      padding: 12px 0;
+    }
+  }
+  .backToTop__container {
+    width: 20%;
+    justify-content: end;
+    min-width: 132px;
+  }
+  .backToTop {
+    padding: 12px 0;
+    align-items: center;
+    gap: 12px;
+  }
+  &__icon {
+    font-size: 16px;
+  }
+}
+
+@include mobile {
+  .site-map {
+    flex-direction: column-reverse;
+    gap: 40px;
+    .logo {
+      text-align: left;
+      width: 100%;
+    }
+    .menu {
+      width: 100%;
+      a {
+        @include --fs-hd-01;
+      }
+    }
+  }
+  .copyright {
+    flex-wrap: wrap;
+    padding: 20px 0;
+    gap: 12px;
+    .socialLinks {
+      flex-basis: fill;
+      order: 3;
+    }
+    .site-name {
+      flex: 1;
+    }
+    .backToTop__container {
+      flex: 1;
+      margin-right: 12px;
+    }
+  }
+}

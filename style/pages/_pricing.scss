@@ -1,0 +1,192 @@
+/*-- Title sec --*/
+.title_subSlogan {
+  align-self: end;
+  width: 50%;
+  margin: 40px 0;
+  @include --fs-hd-01;
+  font-weight: 900;
+}
+
+/*-- ModelCard sec --*/
+#pricing-title .title__bottom {
+  align-self: start;
+}
+
+.priceCardList {
+  flex-wrap: wrap;
+}
+
+.priceCard__card {
+  border: 1px solid $black80;
+  border-radius: $radius;
+  min-height: 318px;
+}
+
+.priceCard__card-body {
+  padding: 20px 32px;
+  gap: 12px;
+}
+
+.card-body__main {
+  flex: 1;
+  border-bottom: 1px solid $black80;
+}
+
+.priceCard__modelName {
+  @include --fs-hd-03;
+  font-weight: 900;
+}
+
+.priceCard__modelFeature {
+  list-style: inside;
+  @include --fs-body;
+  color: $black20;
+}
+
+.priceCard__price {
+  flex: 1;
+  align-items: center;
+  @include --fs-hd-06;
+  font-weight: 900;
+  span {
+    font-weight: 400;
+    color: $black60;
+  }
+}
+
+.priceCard__link {
+  gap: 12px;
+  @include --fs-body;
+  font-weight: 700;
+}
+
+/*-- Usage terms sec --*/
+#usageTerms .container {
+  gap: 24px;
+}
+
+.termsTitle {
+  flex: 1;
+}
+
+.termsList {
+  flex: 2;
+  gap: 40px;
+}
+
+.terms__item {
+  gap: 24px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $black80;
+}
+
+.terms__item__title {
+  @include --fs-hd-01;
+  font-weight: 900;
+}
+
+.terms__item__content {
+  @include --fs-hd-03;
+}
+
+/*-- FAQ terms sec --*/
+#faq .container {
+  gap: 24px;
+}
+
+.faqTitle {
+  flex: 1;
+}
+
+.faqList {
+  flex: 2;
+  gap: 16px;
+}
+
+.faq__item {
+  align-items: start;
+  padding: 20px 40px;
+  border: 1px solid $black80;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  &:hover {
+    border-color: $black0;
+  }
+}
+
+.faq__title {
+  @include --fs-hd-06;
+  font-weight: 900;
+  gap: 20px;
+  align-items: center;
+}
+
+.faq__content {
+  gap: 16px;
+  @include --fs-body;
+  margin-left: 44px;
+  margin-top: 16px;
+}
+
+/**************** RWD ****************/
+@include mobile {
+  #pricing-title .title__bottom {
+    align-self: stretch;
+  }
+
+  .title_subSlogan {
+    width: 75%;
+    margin: 24px 0;
+    @include --fs-hd-04;
+  }
+
+  .priceCard__card {
+    min-height: 240px;
+  }
+
+  .priceCard__card-body {
+    padding: 20px;
+  }
+
+  /*-- Usage terms sec --*/
+  #usageTerms .container {
+    flex-wrap: wrap;
+  }
+
+  .termsTitle {
+    min-width: 100%;
+  }
+
+  .termsList {
+    min-width: 100%;
+    gap: 24px;
+  }
+
+  .terms__item__title {
+    @include --fs-hd-03;
+  }
+
+  .terms__item__content {
+    @include --fs-body;
+  }
+
+  /*-- FAQ terms sec --*/
+  #faq .container {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .faqTitle {
+    min-width: 100%;
+  }
+
+  .faqList {
+    min-width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .faq__item {
+    padding: 20px;
+  }
+}

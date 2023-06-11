@@ -1,0 +1,28 @@
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-direction-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/*-- 3-clo-card-list --*/
+.cardCol-3 {
+  .card {
+    width: 33.3%;
+  }
+}
+
+/*-- 2-clo-card-list --*/
+.cardCol-2 {
+  .card {
+    width: calc(50% - 12px);
+  }
+}
+
+/*-- display control --*/
+.hidden {
+  display: none;
+}

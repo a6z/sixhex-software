@@ -1,0 +1,223 @@
+/*-- material icons --*/
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+*,
+*::before,
+*::after {
+  // outline: 1px solid rgba(211, 192, 192, 0.5);
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: $black100;
+  color: $black0;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+h2.sectionTitle {
+  @include --fs-hd-03;
+  font-weight: 900;
+  margin-bottom: 80px;
+}
+@include mobile {
+  h2.sectionTitle {
+    @include --fs-hd-06;
+    margin-bottom: 24px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1296px;
+}
+
+a {
+  display: inline-block;
+  color: $black0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover,
+  &:active {
+    color: $primary;
+  }
+}
+
+button {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 245px;
+  width: 100%;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.85;
+    cursor: pointer;
+  }
+}
+
+/* -- first-section --*/
+.first-section {
+  padding-top: 0;
+}
+
+.title {
+  min-height: calc(100vh - 80px);
+  align-items: stretch;
+}
+
+.title__top {
+  align-items: stretch;
+  flex: 1;
+}
+
+.title__bottom {
+  margin-top: 24px;
+  align-self: end;
+}
+
+.title__slogan {
+  @include --fs-ds-02;
+  font-weight: 900;
+  margin: 40px 0;
+}
+
+/*--- arrow banner ---*/
+.motion {
+  max-width: 480px;
+  overflow: hidden;
+  .arrow-motion {
+    width: 33.3%;
+  }
+}
+
+/*--- button ---*/
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $radius;
+  &--lg {
+    padding: 20px 40px;
+    gap: 12px;
+  }
+  &--md {
+    padding: 8px 16px;
+    gap: 10px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn--primary {
+  border: 1px solid $black0;
+  @include --fs-hd-06;
+  font-weight: 900;
+  transition: all 0.3s ease;
+  &__icon {
+    font-size: 24px;
+    margin-right: -8px;
+  }
+  &:hover {
+    color: $black0;
+    border-color: $primary;
+    background-color: $primary;
+  }
+}
+
+.btn--secondary {
+  border: 1px solid $black20;
+  background-color: $black0;
+  @include --fs-body;
+  transition: all 0.3s ease;
+  &__icon {
+    font-size: 16px;
+    margin-right: -8px;
+  }
+  &:hover {
+    color: $black100;
+    border-color: $black100;
+    background-color: $black0;
+  }
+}
+
+/*-- card & card-list style --*/
+.card-list {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  gap: 24px;
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: $radius;
+    overflow: hidden;
+  }
+}
+
+/*-- scrollbar --*/
+/* Demonstrate a "mostly customized" scrollbar
+/* (won't be visible otherwise if width/height is specified) */
+html::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: $black80; /* or add it to the track */
+}
+
+/* Add a thumb */
+html::-webkit-scrollbar-thumb {
+  background: $black20;
+}
+
+@include mobile {
+  section {
+    padding: 60px 12px;
+  }
+
+  .title__slogan {
+    @include --fs-hd-01;
+    margin: 40px 0;
+  }
+
+  .title__bottom {
+    align-self: stretch;
+  }
+
+  .motion {
+    width: 100%;
+    max-width: 100%;
+    .arrow-motion {
+      flex: 1;
+    }
+  }
+
+  .card-list {
+    flex-direction: column;
+    gap: 12px;
+    .card {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "./base/_reset.css";
+@import "./base/mixin";
+@import "./base/_variables";
+@import "./base/utilities";
+@import "./animations/animation.scss";
+@import "./base/global";
+@import "./components/aiTools";
+@import "./components/footer";
+@import "./components/header";
+
+@import "./pages/index";
+@import "./pages/pricing";

@@ -1,0 +1,284 @@
+/*-- AI tool sec --*/
+#aiTools {
+  background-color: $black0;
+  border-radius: 160px;
+  padding: 160px 80px;
+  margin: 80px 0;
+  overflow: hidden;
+}
+.aiTools {
+  color: $black100;
+}
+.aiTools__title {
+  text-align: center;
+  @include --fs-ds-03;
+  font-weight: 900;
+  margin-bottom: 80px;
+}
+.aiTools__content {
+  margin-bottom: 40px;
+  gap: 24px;
+}
+.aiTools__searchBar {
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+  border-radius: $radius;
+  background-color: $black20;
+  padding: 20px 40px;
+}
+
+.searchBar__icon {
+  font-size: 24px;
+  color: $black60;
+}
+
+.searchBar__text {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  @include --fs-body;
+  color: $black100;
+  &::placeholder {
+    color: $black60;
+  }
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: none;
+    border: none;
+  }
+}
+
+.aiTools__filterGroup {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.filter-tags {
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+  &__btn {
+    flex-shrink: 0;
+    background-color: $black0;
+    border: none;
+    color: $black60;
+    @include --fs-body;
+    font-weight: 400;
+    transition: all 0.5s ease;
+    &:hover,
+    &[checked] {
+      color: $black100;
+      background-color: $black20;
+      @include --fs-body;
+      font-weight: 700;
+    }
+  }
+}
+
+/*--- 篩選選單 ---*/
+.filter-filter {
+  position: relative;
+}
+
+.filter-sort {
+  position: relative;
+}
+
+.filter-card {
+  position: absolute;
+  z-index: 999;
+  top: calc(100% + 4px);
+  padding: 20px 0;
+  background-color: $black0;
+  border-radius: $radius;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filter-filter{
+  .filter-card{
+    left: 0;
+  }
+}
+
+.filter-sort{
+  .filter-card{
+    right: 0;
+  }
+}
+
+.filter-list__container {
+  text-align-last: left;
+}
+
+.filter-list__container__top {
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 16px 40px 24px 40px;
+    background-color: $black20;
+  }
+}
+
+.filter-filter__list {
+  .filter-list__option {
+    min-width: 240px;
+  }
+}
+
+.filter-list__title {
+  @include --fs-tiny;
+  color: $black60;
+  font-weight: 700;
+  padding: 4px 40px;
+}
+
+.filter-list__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include --fs-body;
+  color: $black100;
+  padding: 4px 40px;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $black20;
+  }
+  span{
+    font-size: 16px;
+  }
+}
+
+.aiTools__toolList {
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.toolList__card {
+  flex: 1 1 auto;
+  max-width: 416px;
+  border: 1px solid $black20;
+  @include --fs-body;
+  &-layer {
+    overflow: hidden;
+    height: 312px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &-title {
+    @include --fs-hd-06;
+    font-weight: 900;
+  }
+  &-description {
+    color: $black80;
+  }
+  &-subtitle {
+    font-weight: 700;
+  }
+  &-link {
+    color: $black100;
+  }
+
+  &-body {
+    padding: 20px 32px;
+    @extend .flex-direction-row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $black20;
+    &__info {
+      flex: 2;
+      @extend .flex-direction-col;
+      justify-content: start;
+      align-items: stretch;
+      gap: 12px;
+    }
+  }
+}
+
+.aiTools__pagination {
+  margin-top: 40px;
+  gap: 4px;
+  align-items: center;
+  align-self: end;
+}
+
+.pageStep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  border-radius: $radius;
+  @include --fs-small;
+  font-weight: 700;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  &:hover,
+  &[checked] {
+    color: $black0;
+    background-color: $black100;
+  }
+}
+
+/*--- RWD ---*/
+
+@include tablet {
+  #aiTools {
+    border-radius: 20px;
+    padding: 80px 12px;
+    margin: 60px 0;
+  }
+
+  .toolList__card {
+    max-width: 100%;
+  }
+
+  .aiTools__filterGroup {
+    flex-wrap: wrap;
+  }
+
+  .filter-tags {
+    padding: 0 12px;
+    margin-left: -12px;
+    margin-right: -12px;
+    justify-content: space-between;
+    min-width: 100%;
+    order: 3;
+    overflow: scroll;
+    touch-action: pmanipulation;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .aiTools__title {
+    @include --fs-hd-03;
+    margin-bottom: 32px;
+  }
+
+  .aiTools__toolList {
+    gap: 12px;
+  }
+
+  .aiTools__pagination {
+    margin-top: 32px;
+  }
+}
