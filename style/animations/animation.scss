@@ -1,0 +1,42 @@
+@keyframes arrow-motion {
+  0% {
+    transform: translateY(100%);
+  }
+  45% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes enterprise-scroll {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -160px;
+  } /* 一張圖片寬度 */
+}
+
+@mixin animation-arrow-motion($time) {
+  animation: arrow-motion 3s cubic-bezier(0.39, 0.58, 0.57, 1) infinite;
+  animation-delay: $time + s;
+}
+
+// .clients__logos-row {
+//   // animation: enterprise-scroll 10s linear infinite;
+// }
+
+.motion > .arrow-motion:nth-of-type(3) {
+  @include animation-arrow-motion(0);
+}
+.motion > .arrow-motion:nth-of-type(2) {
+  @include animation-arrow-motion(0.2);
+}
+.motion > .arrow-motion:nth-of-type(1) {
+  @include animation-arrow-motion(0.4);
+}
