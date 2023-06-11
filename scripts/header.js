@@ -15,47 +15,4 @@ $(document).ready(function () {
     let mtIconText = mtIcon.text();
     mtIconText === "menu" ? mtIcon.text("close") : mtIcon.text("menu");
   });
-
-  /*--- slick 套件 ---*/
-  if ($(window).width() < 768) {
-    $(".responsiveSlick").slick({
-      settings: {
-        infinite: false,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      },
-
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            adaptiveHeight: true,
-            arrows: false,
-            accessibility: false,
-            dots: true,
-            autoplay: true,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    });
-  }
-
-  $(window).resize(function () {
-    if (
-      $(window).width() < 768 &&
-      !$(".responsiveSlick").hasClass("slick-initialized")
-    ) {
-      $(".responsiveSlick").slick({
-        // Slick options here
-      });
-    } else if (
-      $(window).width() >= 768 &&
-      $(".responsiveSlick").hasClass("slick-initialized")
-    ) {
-      $(".responsiveSlick").slick("unslick");
-    }
-  });
 });
