@@ -32,12 +32,33 @@ $(document).ready(function () {
       !$(".responsiveSlick").hasClass("slick-initialized")
     ) {
       $(".responsiveSlick").slick({
-        // Slick options here
+        settings: {
+          infinite: false,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              adaptiveHeight: true,
+              arrows: false,
+              accessibility: false,
+              dots: true,
+              autoplay: true,
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
     } else if (
       $(window).width() >= 768 &&
       $(".responsiveSlick").hasClass("slick-initialized")
     ) {
+      console.log("resize", $(window).width());
       $(".responsiveSlick").slick("unslick");
     }
   });

@@ -64,7 +64,6 @@
   align-items: center;
   gap: 8px;
   &__btn {
-    flex-shrink: 0;
     background-color: $black0;
     border: none;
     color: $black60;
@@ -79,6 +78,9 @@
       font-weight: 700;
     }
   }
+  li {
+    flex-shrink: 0;
+  }
 }
 
 /*--- 篩選選單 ---*/
@@ -88,6 +90,7 @@
 
 .filter-sort {
   position: relative;
+  appearance: none;
 }
 
 .filter-card {
@@ -100,14 +103,14 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.filter-filter{
-  .filter-card{
+.filter-filter {
+  .filter-card {
     left: 0;
   }
 }
 
-.filter-sort{
-  .filter-card{
+.filter-sort {
+  .filter-card {
     right: 0;
   }
 }
@@ -150,7 +153,7 @@
   &:hover {
     background-color: $black20;
   }
-  span{
+  span {
     font-size: 16px;
   }
 }
@@ -166,6 +169,11 @@
   max-width: 416px;
   border: 1px solid $black20;
   @include --fs-body;
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
   &-layer {
     overflow: hidden;
     height: 312px;
@@ -174,9 +182,6 @@
       width: 100%;
       object-fit: cover;
       transition: all 0.3s ease;
-      &:hover {
-        transform: scale(1.2);
-      }
     }
   }
   &-title {

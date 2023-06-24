@@ -20,6 +20,10 @@
   border: 1px solid $black80;
   border-radius: $radius;
   min-height: 318px;
+  transition: all .5s ease;
+  &:hover {
+    border-color: $black0;
+  }
 }
 
 .priceCard__card-body {

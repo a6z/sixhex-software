@@ -1,4 +1,4 @@
-/* @charset "UTF-8"; */
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -525,8 +525,6 @@ html::-webkit-scrollbar-thumb {
   gap: 8px;
 }
 .filter-tags__btn {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   background-color: #fff;
   border: none;
   color: #919191;
@@ -543,6 +541,10 @@ html::-webkit-scrollbar-thumb {
   line-height: 1.5;
   font-weight: 700;
 }
+.filter-tags li {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
 
 /*--- 篩選選單 ---*/
 .filter-filter {
@@ -551,6 +553,9 @@ html::-webkit-scrollbar-thumb {
 
 .filter-sort {
   position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .filter-card {
@@ -638,6 +643,10 @@ html::-webkit-scrollbar-thumb {
   font-size: 1rem;
   line-height: 1.5;
 }
+.toolList__card:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
 .toolList__card-layer {
   overflow: hidden;
   height: 312px;
@@ -649,10 +658,6 @@ html::-webkit-scrollbar-thumb {
      object-fit: cover;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-.toolList__card-layer img:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 .toolList__card-title {
   font-size: 1.25rem;
@@ -949,6 +954,19 @@ html::-webkit-scrollbar-thumb {
       touch-action: manipulation;
 }
 
+.navMenu-collapse-list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navMenu-collapse-copyright {
+  margin: 0 12px;
+}
+
 .navMenu-collapse.open {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1221,7 +1239,7 @@ html::-webkit-scrollbar-thumb {
   gap: 40px;
   text-align: center;
 }
-.callToAction p {
+.callToAction h3 {
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 900;
@@ -1309,6 +1327,11 @@ html::-webkit-scrollbar-thumb {
   border: 1px solid #525252;
   border-radius: 1rem;
   min-height: 318px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.priceCard__card:hover {
+  border-color: #fff;
 }
 
 .priceCard__card-body {

@@ -55,6 +55,14 @@
   touch-action: manipulation;
 }
 
+.navMenu-collapse-list {
+  flex: 1;
+  justify-content: center;
+}
+
+.navMenu-collapse-copyright {
+  margin: 0 12px;
+}
 .navMenu-collapse.open {
   display: flex;
   position: fixed;
